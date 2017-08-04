@@ -34,10 +34,7 @@ public class Counter extends HttpServlet {
 		int count = (int) session.getAttribute("count");
 		count++;
 		session.setAttribute("count", count);
-		request.setAttribute("count", count);
-		
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/counter.jsp");
-		view.forward(request, response);
+		response.sendRedirect("/Counter");
 	}
 
 }
